@@ -1,0 +1,146 @@
+/* Shared palette and an 8px spacing scale for every page. */
+:root {
+    --lavender: #A78BFA;
+    --blue: #93C5FD;
+    --mint: #A7F3D0;
+    --slate: #334155;
+    --light-gray: #F3F4F6;
+    --white: #FFFFFF;
+    --purple: #6D28D9;
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-6: 48px;
+    --space-8: 64px;
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-gray);
+    color: var(--slate);
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+h1, h2, h3 {
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.3;
+}
+h1 { margin: 0; font-size: 1.75rem; }
+h2 { margin: 0 0 var(--space-2); font-size: 1.5rem; }
+h3 { margin: 0 0 var(--space-1); color: var(--purple); font-size: 1.125rem; }
+p { margin: 0 0 var(--space-2); }
+p:last-child { margin-bottom: 0; }
+a { color: var(--purple); text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+img { display: block; max-width: 100%; height: auto; }
+
+header {
+    padding: var(--space-3) var(--space-2);
+    background: var(--slate);
+    color: var(--white);
+    border-bottom: 4px solid var(--lavender);
+}
+.header-inner { max-width: 1120px; margin-inline: auto; }
+nav { margin-top: var(--space-3); }
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a {
+    display: block;
+    padding: var(--space-1) var(--space-2);
+    min-height: 48px;
+    border-radius: 8px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+}
+nav a[aria-current='page'] { background: var(--blue); color: var(--slate); }
+nav a:hover { background: var(--mint); color: var(--slate); }
+nav a:focus-visible { outline-color: var(--mint); }
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transform: translateY(-200%);
+    padding: var(--space-1) var(--space-2);
+    background: var(--white);
+    color: var(--slate);
+    z-index: 10;
+}
+.skip-link:focus { transform: translateY(0); }
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1184px;
+    margin: var(--space-3) auto;
+    padding-inline: var(--space-2);
+}
+section {
+    margin-bottom: var(--space-3);
+    padding: var(--space-3);
+    background: var(--white);
+    border: 1px solid #D7DFE9;
+    border-radius: 16px;
+}
+section:last-child { margin-bottom: 0; }
+#intro { background: #E0F2FE; border-color: var(--blue); }
+#intro h2 { max-width: 24ch; }
+#intro p { max-width: 64ch; }
+#contact { background: #ECFDF5; border-color: var(--mint); }
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+}
+.project-card {
+    min-width: 0;
+    padding: var(--space-3);
+    background: #F5F3FF;
+    border: 1px solid var(--lavender);
+    border-top: 4px solid var(--lavender);
+    border-radius: 8px;
+}
+.skills-list { margin: 0; padding-left: var(--space-3); }
+.skills-list li + li { margin-top: var(--space-1); }
+footer {
+    padding: var(--space-3) var(--space-2);
+    background: var(--slate);
+    color: var(--white);
+    text-align: center;
+    border-top: 4px solid var(--mint);
+}
+footer p { margin: 0; }
+
+/* Tablet: horizontal navigation and two project columns. */
+@media (min-width: 768px) {
+    header { padding: var(--space-3) var(--space-4); }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    nav ul { flex-direction: row; flex-wrap: wrap; }
+    main { padding-inline: var(--space-4); margin-block: var(--space-4); }
+    section { padding: var(--space-4); margin-bottom: var(--space-4); }
+    #intro { padding-block: var(--space-6); }
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); }
+}
+
+/* Desktop: three project columns and a single header row. */
+@media (min-width: 1200px) {
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+    nav { margin-top: 0; }
+    main { margin-block: var(--space-6); }
+    #intro { padding: var(--space-8) var(--space-6); }
+    #intro h2 { font-size: 2.5rem; }
+    .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
