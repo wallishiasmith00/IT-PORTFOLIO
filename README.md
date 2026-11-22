@@ -29,3 +29,4 @@ The contact form is a practice form and does not send messages.
 
 ### Consistent Colors
 All three pages use the same stylesheet and color palette.
+I checked the text and background color combinations with the WebAIM Contrast Checker. All combinations tested passed WCAG AA for normal text.
