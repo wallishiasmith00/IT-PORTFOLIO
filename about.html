@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="contact.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -22,42 +21,11 @@
     </ul></nav>
 </div>
 </header>
-<main id="main-content" tabindex="-1">
+<main id="main-content">
     <section id="intro"><h2>About Me</h2><p>I'm an Information Technology student working toward building my knowledge and experience.</p></section>
     <section><h2>My Story</h2><p>This is a placeholder for more information about my background, interests, and goals.</p></section>
     <section><h2>Skills I'm Learning</h2><ul class="skills-list"><li>HTML</li><li>Computer troubleshooting</li><li>Technical support</li><li>Problem solving</li></ul></section>
-    <section id="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact Me</h2>
-        <p id="form-note">Have a question about my work? Fill out the form below. All fields marked “required” must be completed.</p>
-        <p id="demo-note">This is a portfolio demo. You can check your message, but it will not be sent or saved.</p>
-        <noscript><p>JavaScript is needed to check this demo form; messages are not sent.</p></noscript>
-        <form id="contact-form" aria-describedby="form-note demo-note">
-            <div id="error-summary" class="error-summary" tabindex="-1" hidden></div>
-            <div class="form-field">
-                <label for="contact-name">Name (required)</label>
-                <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="name-error">
-                <p id="name-error" class="field-error" hidden></p>
-            </div>
-            <div class="form-field">
-                <label for="contact-email">Email (required)</label>
-                <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" aria-describedby="email-error">
-                <p id="email-error" class="field-error" hidden></p>
-            </div>
-            <fieldset>
-                <legend>What is your message about? (optional)</legend>
-                <div class="radio-option"><input id="topic-project" name="topic" type="radio" value="project"><label for="topic-project">A project</label></div>
-                <div class="radio-option"><input id="topic-general" name="topic" type="radio" value="general"><label for="topic-general">A general question</label></div>
-            </fieldset>
-            <div class="form-field">
-                <label for="contact-message">Message (required)</label>
-                <p id="message-hint">Write between 10 and 2,000 characters.</p>
-                <textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="2000" aria-describedby="message-hint message-error"></textarea>
-                <p id="message-error" class="field-error" hidden></p>
-            </div>
-            <button type="submit" disabled>Check message</button>
-            <p id="form-status" role="status"></p>
-        </form>
-    </section>
+    <section id="contact"><h2>Contact</h2><p>Email: add-your-email-here@example.com</p><p>Replace this placeholder with the contact information you want to share.</p></section>
 </main>
 <footer><p>&copy; 2026 My IT Portfolio</p></footer>
 </body>
