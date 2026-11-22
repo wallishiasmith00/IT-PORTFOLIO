@@ -25,8 +25,54 @@
     <section id="intro"><h2>About Me</h2><p>I'm an Information Technology student working toward building my knowledge and experience.</p></section>
     <section><h2>My Story</h2><p>This is a placeholder for more information about my background, interests, and goals.</p></section>
     <section><h2>Skills I'm Learning</h2><ul class="skills-list"><li>HTML</li><li>Computer troubleshooting</li><li>Technical support</li><li>Problem solving</li></ul></section>
-    <section id="contact"><h2>Contact</h2><p>Email: add-your-email-here@example.com</p><p>Replace this placeholder with the contact information you want to share.</p></section>
+   <section id="contact">
+    <h2>Contact Me</h2>
+    <p>All fields are required.</p>
+
+    <form id="contact-form">
+        <fieldset>
+            <legend>Your message</legend>
+
+            <p>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"
+                       autocomplete="name" required>
+            </p>
+
+            <p>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email"
+                       autocomplete="email" required>
+            </p>
+
+            <p>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message"
+                          rows="5" required></textarea>
+            </p>
+
+            <button type="submit">Check message</button>
+        </fieldset>
+    </form>
+</section>
 </main>
 <footer><p>&copy; 2026 My IT Portfolio</p></footer>
+    <script>
+const form = document.getElementById("contact-form");
+
+const status = document.createElement("p");
+status.setAttribute("role", "status");
+form.appendChild(status);
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    status.textContent =
+        "Your entries are valid. This practice form does not send messages.";
+});
+
+form.addEventListener("input", function () {
+    status.textContent = "";
+});
+</script>
 </body>
 </html>
