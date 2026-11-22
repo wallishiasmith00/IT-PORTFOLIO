@@ -144,3 +144,47 @@ footer p { margin: 0; }
     #intro h2 { font-size: 2.5rem; }
     .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* Contact controls share the palette and keep labels close to their fields. */
+form { max-width: 42rem; margin-top: var(--space-3); }
+.form-field, fieldset { margin: 0 0 var(--space-3); }
+label, legend { font-weight: 600; }
+.form-field > label { display: block; margin-bottom: var(--space-1); }
+input, textarea, button { font: inherit; }
+input:not([type='radio']), textarea {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    padding: var(--space-1);
+    border: 2px solid var(--slate);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--slate);
+}
+textarea { resize: vertical; }
+fieldset { min-width: 0; padding: var(--space-2); border: 2px solid var(--slate); border-radius: 8px; }
+legend { padding-inline: var(--space-1); }
+.radio-option { display: flex; align-items: center; gap: var(--space-1); }
+.radio-option input { flex: 0 0 auto; width: 20px; height: 20px; accent-color: var(--purple); }
+.radio-option label { padding-block: 12px; cursor: pointer; }
+button {
+    min-height: 48px;
+    padding: var(--space-1) var(--space-3);
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+    background: var(--purple);
+    color: var(--white);
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover { background: #4C1D95; border-color: #4C1D95; }
+button:disabled { cursor: not-allowed; }
+input:focus-visible, textarea:focus-visible, button:focus-visible,
+.error-summary:focus { outline: 3px solid var(--purple); outline-offset: 4px; }
+.field-error { color: #991B1B; font-weight: 600; margin-top: var(--space-1); }
+[aria-invalid='true'] { border-color: #991B1B !important; }
+.error-summary { padding: var(--space-2); margin-bottom: var(--space-3); border: 2px solid #991B1B; background: var(--white); }
+.error-summary h3 { color: #991B1B; }
+.error-summary ul { margin-bottom: 0; padding-left: var(--space-3); }
+#form-status:not(:empty) { margin-top: var(--space-2); font-weight: 600; }
+[hidden] { display: none !important; }
